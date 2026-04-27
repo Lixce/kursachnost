@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCT PORTAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-busy="true" aria-label="Загрузка">
+    <div class="page-loader__inner">
+      <div class="page-loader__logo" aria-hidden="true">VCT</div>
+      <div class="skeleton skeleton--title"></div>
+      <div class="skeleton skeleton--line"></div>
+      <div class="skeleton skeleton--line skeleton--short"></div>
+      <p class="page-loader__text">Загрузка портала…</p>
+    </div>
+  </div>
+
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+
+  <video
+    id="bgVideo"
+    class="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster=""
+  >
+    <source src="VMESTE_VESELEE__10744__10744_Treyler_agenta_Miks__VALORANT.mp4" type="video/mp4" />
+
+  </video>
+  <div class="bg-video-overlay"></div>
+
+  <div class="vct-shell" id="mainContent" hidden>
+    <header class="vct-header" id="siteHeader">
+      <div class="vct-logo" role="img" aria-label="VCT PORTAL">
+        <span class="vct-logo__mark" aria-hidden="true">
+<img src="main-str/лого.png">
+        </span>
+        <span class="vct-logo__text">VCT <span class="vct-logo__portal">PORTAL</span></span>
+      </div>
+
+      <nav class="vct-nav" aria-label="Основное меню">
+        <button type="button" class="vct-nav__link nav-hotkey" data-open-modal="info" title="Ctrl+I">
+          Матчмейкинг
+        </button>
+        <a href="turnir.html" class="vct-nav__link vct-nav__link--page">Турниры и лиги</a>
+        <button type="button" class="vct-nav__link" data-open-modal="form" title="Ctrl+Shift+F">
+          Кастомные матчи
+        </button>
+      </nav>
+
+      <button type="button" class="vct-header__login" data-open-modal="login">Войти</button>
+    </header>
+
+    <div class="vct-body">
+      <section class="vct-hero" aria-labelledby="vctHeroTitle">
+        <h1 class="vct-hero__title" id="vctHeroTitle">
+          ТВОЙ ПУТЬ<br />
+          В МИР VALORANT
+        </h1>
+        <p class="vct-hero__sub">
+          Играй с друзьями в кастомных матчах, выигрывай турниры и лиги, получай ценные призы и зарабатывай.
+        </p>
+        <button type="button" class="vct-btn-riot" id="btnRiotDemo" title="Демо-кнопка">
+          <span class="vct-btn-riot__icon" aria-hidden="true">
+<img src="main-str/вход.png">
+          </span>
+          <span class="vct-btn-riot__label">Войти через RIOT GAMES</span>
+        </button>
+      </section>
+
+      <section class="vct-stats" aria-label="Статистика портала">
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/User Male.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">150000+</span>
+            <span class="vct-stat__label">Играют у нас</span>
+          </div>
+        </div>
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/Fight.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">4000000+</span>
+            <span class="vct-stat__label">Матчей сыграно</span>
+          </div>
+        </div>
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/Fight.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">900000$+</span>
+            <span class="vct-stat__label">Выплачено призовых</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="scroll-hint" id="scrollHint" aria-hidden="true"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+
+  <dialog class="modal modal--vct" id="modalInfo" aria-labelledby="modalInfoTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalInfoTitle">О проекте</h2>
+    <p>
+      Демонстрация ТЗ: видео-фон, модалки, скролл, localStorage, курсор, заглушка, прогресс, lazy load, генерация,
+      visibility, hotkeys.
+    </p>
+  </dialog>
+
+  <dialog class="modal modal--vct" id="modalHelp" aria-labelledby="modalHelpTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalHelpTitle">Помощь</h2>
+    <ul>
+      <li>Видео: <code>media/background.mp4</code> (или правьте <code>&lt;source&gt;</code>).</li>
+      <li>Поля формы в модалке «Кастомные матчи» — <code>localStorage</code>.</li>
+      <li>Вкладка в фоне — видео на паузе.</li>
+    </ul>
+  </dialog>
+
+  <dialog class="modal modal--vct modal--wide" id="modalLogin" aria-labelledby="modalLoginTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalLoginTitle">Вход</h2>
+    <p>Демо: кнопки «Войти» в шапке и Riot ниже. Подключите реальную авторизацию при необходимости.</p>
+  </dialog>
+
+  <dialog class="modal modal--vct modal--wide" id="modalForm" aria-labelledby="modalFormTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalFormTitle">Кастомные матчи — форма</h2>
+
+    <div class="form-progress" role="status" aria-live="polite">
+      <div class="form-progress__label">
+        Заполнение формы: <strong id="formPercent">0</strong>%
+      </div>
+      <div class="form-progress__track">
+        <div class="form-progress__bar" id="formProgressBar"></div>
+      </div>
+    </div>
+
+    <form id="mainForm" class="form" autocomplete="on">
+      <label class="field">
+        <span>Имя</span>
+        <input type="text" name="name" id="fieldName" placeholder="Ваше имя" data-persist />
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" id="fieldEmail" placeholder="email@example.com" data-persist />
+      </label>
+      <label class="field">
+        <span>Сообщение</span>
+        <textarea name="message" id="fieldMessage" rows="3" placeholder="Текст…" data-persist></textarea>
+      </label>
+      <label class="field field--check">
+        <input type="checkbox" name="agree" id="fieldAgree" data-persist />
+        <span>Согласие с условиями</span>
+      </label>
+      <div class="form__actions">
+        <button type="submit" class="btn btn--riot">Сохранить локально</button>
+        <button type="button" class="btn btn--ghost" id="btnClearStorage">Сбросить поля</button>
+      </div>
+    </form>
+
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
