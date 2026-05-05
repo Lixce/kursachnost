@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCT PORTAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-busy="true" aria-label="Загрузка">
+    <div class="page-loader__inner">
+      <div class="page-loader__logo" aria-hidden="true">VCT</div>
+      <div class="skeleton skeleton--title"></div>
+      <div class="skeleton skeleton--line"></div>
+      <div class="skeleton skeleton--line skeleton--short"></div>
+      <p class="page-loader__text">Загрузка портала…</p>
+    </div>
+  </div>
+
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+
+  <video
+    id="bgVideo"
+    class="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster=""
+  >
+    <source src="VMESTE_VESELEE__10744__10744_Treyler_agenta_Miks__VALORANT (1).mp4" type="video/mp4" />
+
+  </video>
+  <div class="bg-video-overlay"></div>
+
+  <div class="vct-shell" id="mainContent" hidden>
+    <header class="vct-header" id="siteHeader">
+      <div class="vct-logo" role="img" aria-label="VCT PORTAL">
+        <span class="vct-logo__mark" aria-hidden="true">
+<img src="main-str/лого.png">
+        </span>
+        <span class="vct-logo__text">VCT <span class="vct-logo__portal">PORTAL</span></span>
+      </div>
+
+      <nav class="vct-nav" aria-label="Основное меню">
+        <a href="turnir.html" class="vct-nav__link vct-nav__link--page">Турниры и лиги</a>
+        <a href="matchi.html" class="vct-nav__link vct-nav__link--page">Кастомные матчи</a>
+      </nav>
+
+      <button type="button" class="vct-header__login" data-open-modal="register">Войти</button>
+    </header>
+
+    <div class="vct-body">
+      <section class="vct-hero" aria-labelledby="vctHeroTitle">
+        <h1 class="vct-hero__title" id="vctHeroTitle">
+          ТВОЙ ПУТЬ<br />
+          В МИР VALORANT
+        </h1>
+        <p class="vct-hero__sub">
+          Играй с друзьями в кастомных матчах, выигрывай турниры и лиги, получай ценные призы и зарабатывай.
+        </p>
+        <button type="button" class="vct-btn-riot" id="btnRiotDemo" title="Демо-кнопка">
+          <span class="vct-btn-riot__icon" aria-hidden="true">
+<img src="main-str/вход.png">
+          </span>
+          <span class="vct-btn-riot__label">Войти через RIOT GAMES</span>
+        </button>
+      </section>
+
+      <section class="vct-stats" aria-label="Статистика портала">
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/User Male.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">150000+</span>
+            <span class="vct-stat__label">Играют у нас</span>
+          </div>
+        </div>
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/Fight.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">4000000+</span>
+            <span class="vct-stat__label">Матчей сыграно</span>
+          </div>
+        </div>
+        <div class="vct-stat">
+          <span class="vct-stat__accent" aria-hidden="true"></span>
+          <span class="vct-stat__icon" aria-hidden="true">
+<img src="main-str/Fight.png">
+          </span>
+          <div class="vct-stat__text">
+            <span class="vct-stat__num">900000$+</span>
+            <span class="vct-stat__label">Выплачено призовых</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="scroll-hint" id="scrollHint" aria-hidden="true"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+
+  
+
+  <dialog class="modal modal--vct modal--wide" id="modalRegister" aria-labelledby="modalRegisterTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalRegisterTitle">Регистрация</h2>
+    <form class="auth-form" autocomplete="on">
+      <input class="auth-form__input" type="email" name="email" placeholder="Email" required />
+      <input class="auth-form__input" type="text" name="username" placeholder="Имя пользователя" required />
+      <input class="auth-form__input" type="password" name="password" placeholder="Пароль" required />
+      <input class="auth-form__input" type="password" name="password2" placeholder="Повторите пароль" required />
+      <button type="submit" class="auth-form__submit">Зарегистрироваться</button>
+    </form>
+  </dialog>
+
+  <dialog class="modal modal--vct modal--wide" id="modalRiotLogin" aria-labelledby="modalRiotLoginTitle">
+    <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+    <h2 id="modalRiotLoginTitle">Вход через Riot ID</h2>
+    <form class="auth-form" autocomplete="on">
+      <input class="auth-form__input" type="text" name="riotId" placeholder="Ваш RIOT ID" required />
+      <input class="auth-form__input" type="password" name="riotPassword" placeholder="Пароль" required />
+      <button type="submit" class="auth-form__submit">Войти</button>
+    </form>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

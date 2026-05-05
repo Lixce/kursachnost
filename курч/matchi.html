@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Матчи — VCT PORTAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="turnir.css" />
+</head>
+<body>
+  <div class="trn-page">
+    <header class="trn-header">
+      <div class="trn-container trn-header__inner">
+        <a class="trn-brand" href="index.html">
+          <img class="trn-brand__logo" src="main-str/лого.png" alt="" width="44" height="44" />
+          <span class="trn-brand__text">VCT <em>PORTAL</em></span>
+        </a>
+        <nav class="trn-nav" aria-label="Основное меню">
+          <a href="index.html">Главная</a>
+          <a href="matchi.html" aria-current="page">Матчи</a>
+          <a href="turnir.html">Турниры</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="trn-main mtc-main">
+      <section class="mtc-banner trn-container" aria-label="Кастомные матчи и матчмейкинг">
+        <div class="mtc-banner__image" aria-hidden="true">Ваш баннер</div>
+        <div class="mtc-banner__overlay">
+          <h1>Кастомные матчи &amp; Матчмейкинг</h1>
+          <p>Создайте приватный матч с собственными настройками или найдите соперников через матчмейкинг.</p>
+          <button type="button" class="mtc-banner__btn">Создать матч</button>
+        </div>
+      </section>
+
+      <section class="trn-container mtc-layout" aria-label="Матчи">
+        <aside class="mtc-sidebar">
+          <div class="mtc-card">
+            <div class="mtc-stat"><span>Новые</span><strong>7</strong></div>
+            <div class="mtc-stat"><span>Текущие</span><strong>7</strong></div>
+            <div class="mtc-stat"><span>Завершенные</span><strong>1500</strong></div>
+          </div>
+          <button type="button" class="mtc-filter-btn">Фильтры</button>
+        </aside>
+
+        <div class="mtc-content">
+          <div class="mtc-content__title">Матчи</div>
+
+          <article class="mtc-row">
+            <div class="mtc-row__map">Превью</div>
+            <div class="mtc-row__meta"><span>Карта</span><strong>Ascent</strong></div>
+            <div class="mtc-row__meta"><span>Создатель</span><strong>Asivoy</strong></div>
+            <div class="mtc-row__meta"><span>Режим</span><strong>5v5</strong></div>
+            <div class="mtc-row__meta"><span>Регион</span><strong>Россия</strong></div>
+            <div class="mtc-row__meta"><span>Пинг</span><strong>50 мс</strong></div>
+            <div class="mtc-row__meta"><span>Создан</span><strong>Только что</strong></div>
+          </article>
+
+          <article class="mtc-row">
+            <div class="mtc-row__map">Превью</div>
+            <div class="mtc-row__meta"><span>Карта</span><strong>Breeze</strong></div>
+            <div class="mtc-row__meta"><span>Создатель</span><strong>Mercik</strong></div>
+            <div class="mtc-row__meta"><span>Режим</span><strong>5v5</strong></div>
+            <div class="mtc-row__meta"><span>Регион</span><strong>Россия</strong></div>
+            <div class="mtc-row__meta"><span>Пинг</span><strong>70 мс</strong></div>
+            <div class="mtc-row__meta"><span>Создан</span><strong>2 минуты назад</strong></div>
+          </article>
+
+          <article class="mtc-row">
+            <div class="mtc-row__map">Превью</div>
+            <div class="mtc-row__meta"><span>Карта</span><strong>Abyss</strong></div>
+            <div class="mtc-row__meta"><span>Создатель</span><strong>Lixce</strong></div>
+            <div class="mtc-row__meta"><span>Режим</span><strong>5v5</strong></div>
+            <div class="mtc-row__meta"><span>Регион</span><strong>Россия</strong></div>
+            <div class="mtc-row__meta"><span>Пинг</span><strong>60 мс</strong></div>
+            <div class="mtc-row__meta"><span>Создан</span><strong>8 минут назад</strong></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="trn-footer-top">
+      <div class="trn-container trn-footer-top__inner">
+        <div class="trn-footer-top__row">
+          <div class="trn-footer-top__stats">
+            <span><strong>10000</strong> Игроков онлайн</span>
+            <span><strong>150</strong> Матчей</span>
+          </div>
+          <div class="trn-footer-top__social">
+            <a href="#" class="trn-social" aria-label="VK">VK</a>
+            <a href="#" class="trn-social" aria-label="Telegram">TG</a>
+            <a href="#" class="trn-social" aria-label="Discord">DS</a>
+          </div>
+        </div>
+        <div class="trn-footer-top__rule" role="presentation"></div>
+        <div class="trn-footer-top__row">
+          <div class="trn-footer-top__links">
+            <a href="#">Статус серверов</a>
+            <a href="#">Условия</a>
+            <a href="#">Оферта</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="trn-footer-bottom">
+      <div class="trn-container trn-footer-bottom__inner">
+        <span>Copyright 2021-2026</span>
+        <span class="trn-footer-bottom__company">
+          SATURIA LIMITED, Office A, 16/F, Heng Shan Centre, 145 Queen's Road East, Wan Chai, HK. Reg. number 3009601
+        </span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
